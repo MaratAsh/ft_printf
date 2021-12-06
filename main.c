@@ -6,7 +6,7 @@
 /*   By: alcierra <alcierra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 16:58:36 by alcierra          #+#    #+#             */
-/*   Updated: 2021/12/06 18:49:17 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/12/06 19:26:01 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ void function_test_printf()
 
 int	main(void)
 {
-	//function_test_printf();
+	function_test_printf();
 	//printf("_____________________________________________\n");
 	//ft_printf("%d\n", 54554);
 	
