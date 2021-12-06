@@ -6,7 +6,7 @@
 #    By: alcierra <alcierra@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/13 17:45:26 by alcierra          #+#    #+#              #
-#    Updated: 2021/12/06 15:54:59 by alcierra         ###   ########.fr        #
+#    Updated: 2021/12/06 19:45:42 by alcierra         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,3 +58,7 @@ run: main
 
 run_t: main_t
 		./mandatory
+
+push_my: fclean
+		git push my master
+		git push my test
