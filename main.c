@@ -6,7 +6,7 @@
 /*   By: alcierra <alcierra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 16:58:36 by alcierra          #+#    #+#             */
-/*   Updated: 2021/12/06 19:26:01 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/12/08 08:38:47 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,27 +23,27 @@ void	test_header(char *str)
 
 void	test_expected(char *str)
 {
-	printf("should:\t%s\n", str);
+	printf("\nshould:\t%s\n", str);
 }
 
 void	test_expected_str(char *str)
 {
-	printf("should:\t%s\n", str);
+	printf("\nshould:\t%s\n", str);
 }
 
 void	test_expected_int(int num)
 {
-	printf("should:\t%d\n", num);
+	printf("\nshould:\t%d\n", num);
 }
 
 void	test_result_str(char *str)
 {
-	printf("return:\t%s\n", str);
+	printf("\nreturn:\t%s\n", str);
 }
 
 void	test_result_int(int num)
 {
-	printf("return:\t%d\n", num);
+	printf("\nreturn:\t%d\n", num);
 }
 
 void	function_tests()
@@ -166,6 +166,32 @@ int	main(void)
 	);
 	test_result_int(
 		ft_putnbr_fd(-50000, 1)
+	);
+
+	#ifdef READ_FILEDESCRIPTOR
+	read(READ_FILEDESCRIPTOR, "", 1);
+	#endif
+
+	test_header("ft_putnbr_fd(2147483647, 1)");
+	printf("2147483647");
+	test_expected_int(
+		10
+	);
+	test_result_int(
+		ft_putnbr_fd(2147483647, 1)
+	);
+
+	#ifdef READ_FILEDESCRIPTOR
+	read(READ_FILEDESCRIPTOR, "", 1);
+	#endif
+
+	test_header("ft_putnbr_fd(-2147483648, 1)");
+	printf("-2147483648");
+	test_expected_int(
+		11
+	);
+	test_result_int(
+		ft_putnbr_fd(-2147483648, 1)
 	);
 
 	#ifdef READ_FILEDESCRIPTOR
