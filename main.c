@@ -6,7 +6,7 @@
 /*   By: alcierra <alcierra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 16:58:36 by alcierra          #+#    #+#             */
-/*   Updated: 2021/12/08 15:20:36 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/12/08 16:03:40 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -274,7 +274,12 @@ int	main(int argc, char **argv)
 	//#ifdef READ_FILEDESCRIPTOR
 	//read(READ_FILEDESCRIPTOR, "", 1);
 	//#endif
-	if (argc > 1 && strcmp(argv[1], "printf") == 0)
+	
+	if (argc > 2 && strcmp(argv[1], "printf") == 0)
+	{
+		ft_printf((const char *) argv[2]);
+	}
+	else if (argc > 1 && strcmp(argv[1], "printf") == 0)
 		function_test_printf();
 	else if (argc > 1 && strcmp(argv[1], "functions") == 0)
 		function_tests();
