@@ -6,7 +6,7 @@
 /*   By: alcierra <alcierra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 16:41:38 by alcierra          #+#    #+#             */
-/*   Updated: 2021/12/06 14:47:58 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/12/08 10:55:48 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int	ft_make_rule(char *str, va_list argptr)
 		i += ft_putstr(va_arg(argptr, char *));
 	else if (*str == 'd')
 		i += ft_putnbr(va_arg(argptr, long long));
+	else if (*str == 'p')
+		return (0);
 	return (i);
 }
 

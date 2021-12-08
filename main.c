@@ -6,7 +6,7 @@
 /*   By: alcierra <alcierra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 16:58:36 by alcierra          #+#    #+#             */
-/*   Updated: 2021/12/08 09:04:53 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/12/08 11:44:55 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,6 +130,19 @@ int	main(void)
 	
 	//function_tests();
 
+	test_header("ft_putnbr_base_fd(12345, \"0123456789\", 1)");
+	printf("%d\n", 12345);
+	test_expected_int(
+		5
+	);
+	test_result_int(
+		ft_putnbr_base_fd(12345, "0123456789", 1)
+	);
+
+	#ifdef READ_FILEDESCRIPTOR
+	read(READ_FILEDESCRIPTOR, "", 1);
+	#endif
+	
 	test_header("ft_get_number_digit(12345, 1)");
 	test_expected_int(
 		5
