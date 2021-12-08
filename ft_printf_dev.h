@@ -6,7 +6,7 @@
 /*   By: alcierra <alcierra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 16:54:08 by alcierra          #+#    #+#             */
-/*   Updated: 2021/12/08 11:32:15 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/12/08 11:52:43 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,16 @@
 void		ft_putchar(int c, int *ptr_counter);
 int			ft_strlen(char *str);
 int			ft_putstr(char *str);
+
+// ft_putnbr.c
 int			ft_putnbr(long long num);
+int			ft_putnbr_neg_fd(long long num, int fd);
 int			ft_putnbr_fd(long long num, int fd);
-int			ft_get_base_digits(unsigned long long num, int base_len);
+int			ft_putnbr_base_neg_fd(long long num, char *base, int fd);
+int			ft_putnbr_base_fd(long long num, char *base, int fd);
+
 char		*ft_dec_to_another(unsigned long long num, char *base);
+int			ft_get_base_digits(unsigned long long num, int base_len);
 
 // ft_number_operations.c
 long long	ft_get_highest_digit(long long num);
