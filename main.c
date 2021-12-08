@@ -6,7 +6,7 @@
 /*   By: alcierra <alcierra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 16:58:36 by alcierra          #+#    #+#             */
-/*   Updated: 2021/12/08 08:38:47 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/12/08 09:04:53 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,27 @@ void	test_header(char *str)
 	printf("_____________________________________________\n");
 }
 
+void	test_res_ret_splitter()
+{
+	printf("/\\/\\/\\/\\ -------------------- \\/\\/\\/\\/\n");
+}
+
 void	test_expected(char *str)
 {
 	printf("\nshould:\t%s\n", str);
+	test_res_ret_splitter();
 }
 
 void	test_expected_str(char *str)
 {
 	printf("\nshould:\t%s\n", str);
+	test_res_ret_splitter();
 }
 
 void	test_expected_int(int num)
 {
 	printf("\nshould:\t%d\n", num);
+	test_res_ret_splitter();
 }
 
 void	test_result_str(char *str)
@@ -90,6 +98,18 @@ void function_test_printf()
 	);
 	test_result_int(
 		ft_printf("\n%s\nnum:\t%d\n", "String in string", 50000000)
+	);
+
+	#ifdef READ_FILEDESCRIPTOR
+	read(READ_FILEDESCRIPTOR, "", 1);
+	#endif
+
+	test_header("f(\"string:\\t\\\"%s\\\"\\nNumber:\\t%d\", \"String value\", 10)");
+	test_expected_int(
+		printf("string:\t%s\nNumber:\t%d", "String value", 10)
+	);
+	test_result_int(
+		printf("string:\t%s\nNumber:\t%d", "String value", 10)
 	);
 
 	#ifdef READ_FILEDESCRIPTOR
