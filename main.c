@@ -6,7 +6,7 @@
 /*   By: alcierra <alcierra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 16:58:36 by alcierra          #+#    #+#             */
-/*   Updated: 2021/12/08 14:34:18 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/12/08 15:20:36 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -234,15 +234,35 @@ void function_test_printf()
 
 	test_header("f(\"string:\\t\\\"%s\\\"\\nNumber:\\t%d\", \"String value\", 10)");
 	test_expected_int(
-		printf("string:\t%s\nNumber:\t%d", "String value", 10)
+		printf("string:\t\"%s\"\nNumber:\t%d", "String value", 10)
 	);
 	test_result_int(
-		printf("string:\t%s\nNumber:\t%d", "String value", 10)
+		ft_printf("string:\t\"%s\"\nNumber:\t%d", "String value", 10)
 	);
 
 	#ifdef READ_FILEDESCRIPTOR
 	read(READ_FILEDESCRIPTOR, "", 1);
 	#endif
+
+	test_header("f(\"symbol: \\\'%c\\\'\\nNumber: %d\", \'S\', 10)");
+	test_expected_int(
+		printf("symbol:\t\'%c\'\nNumber:\t%d", 'S', 10)
+	);
+	test_result_int(
+		ft_printf("symbol:\t\'%c\'\nNumber:\t%d", 'S', 10)
+	);
+
+	#ifdef READ_FILEDESCRIPTOR
+	read(READ_FILEDESCRIPTOR, "", 1);
+	#endif
+
+	test_header("f(\"pointer:\\t%p\", 0)");
+	test_expected_int(
+		printf("pointer:\t%p", (void *) 0)
+	);
+	test_result_int(
+		ft_printf("pointer:\t%p", (void *) 0)
+	);
 }
 
 
