@@ -6,7 +6,7 @@
 /*   By: alcierra <alcierra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 16:54:08 by alcierra          #+#    #+#             */
-/*   Updated: 2021/12/06 18:48:15 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/12/08 11:32:15 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,11 @@ long long	ft_cut_highest_digit(long long num);
 long long	ft_power(int num, int power);
 int			ft_get_digits(long long num);
 int			ft_get_number_digit(long long num, int index);
+
+// ft_number_base_operations.c
+int			ft_get_digits_base(long long num, int base_len);
+long long	ft_get_highest_digit_base(long long num, int base_len);
+long long	ft_cut_highest_digit_base(long long num, int base_len);
+int			ft_get_number_digit_base(long long num, int index, int base_len);
 
 #endif
