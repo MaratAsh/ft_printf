@@ -6,7 +6,7 @@
 #    By: alcierra <alcierra@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/13 17:45:26 by alcierra          #+#    #+#              #
-#    Updated: 2021/12/08 11:27:40 by alcierra         ###   ########.fr        #
+#    Updated: 2021/12/08 15:40:22 by alcierra         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,8 @@ NAME	=	libftprintf.a
 HEADER	=	ft_printf_dev.h
 SRCS	=	ft_printf.c				ft_putchar.c			ft_putstr.c			\
 			ft_strlen.c				ft_putnbr.c				ft_dec_to_another.c	\
-			ft_number_operations.c	ft_number_base_operations.c					
+			ft_number_operations.c	ft_number_base_operations.c					\
+			ft_putptr.c
 
 B_SRCS	=	ft_lstmap_bonus.c
 
