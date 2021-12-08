@@ -6,15 +6,12 @@
 /*   By: alcierra <alcierra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 16:54:08 by alcierra          #+#    #+#             */
-/*   Updated: 2021/12/08 15:35:40 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/12/08 15:58:01 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_DEV_H
 # define FT_PRINTF_DEV_H
-
-// del
-# include <stdio.h>
 
 # include <stdarg.h>
 # include <unistd.h>
@@ -38,6 +35,8 @@ int			ft_putnbr_base_usign_fd(unsigned long long num, char *base, int fd);
 // ft_putpointer.c
 int			ft_putptr_upper(unsigned long long num, int fd);
 int			ft_putptr_lower(unsigned long long num, int fd);
+int			ft_putptr_lower_fd(unsigned long long num, int fd);
+int			ft_putptr_upper_fd(unsigned long long num, int fd);
 
 // ft_dec_to_another
 char		*ft_dec_to_another(unsigned long long num, char *base);
