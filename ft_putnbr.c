@@ -6,7 +6,7 @@
 /*   By: alcierra <alcierra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 16:45:26 by alcierra          #+#    #+#             */
-/*   Updated: 2021/12/08 14:45:01 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/12/08 14:50:53 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,21 @@ int	ft_putnbr_fd(long long num, int fd)
 	return (0);
 }
 
+int	ft_putnbr_usign_fd(unsigned long long num, int fd)
+{
+	int	c;
+	int	res;
+
+	c = '0' + num % 10;
+	if (num / 10 > 0)
+	{
+		res = ft_putnbr_usign_fd(num / 10, fd);
+		write(fd, &c, 1);
+		return (1 + res);
+	}
+	write(fd, &c, 1);
+	return (1);
+}
 
 int	ft_putnbr(long long num)
 {
