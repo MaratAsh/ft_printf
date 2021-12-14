@@ -6,7 +6,7 @@
 /*   By: alcierra <alcierra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 16:54:08 by alcierra          #+#    #+#             */
-/*   Updated: 2021/12/14 18:06:50 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/12/14 18:41:03 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,15 @@ int			ft_putnbr_fd(long num, int fd);
 int			ft_putnbr_usign_fd(unsigned long num, int fd);
 
 // ft_putnbr_base.c
-int			ft_putnbr_base_neg_fd(long  num, char *base, int fd);
-int			ft_putnbr_base_fd(long  num, char *base, int fd);
+int			ft_putnbr_base_neg_fd(long num, char *base, int fd);
+int			ft_putnbr_base_fd(long num, char *base, int fd);
 int			ft_putnbr_base_usign_fd(unsigned long num, char *base, int fd);
 
 // ft_putpointer.c
 int			ft_putptr_upper(unsigned long num, int fd);
 int			ft_putptr_lower(unsigned long num, int fd);
+int			ft_put_hex_lower_fd(unsigned long num, int fd);
+int			ft_put_hex_upper_fd(unsigned long num, int fd);
 
 // ft_dec_to_another
 char		*ft_dec_to_another(unsigned long num, char *base);
