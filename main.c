@@ -6,7 +6,7 @@
 /*   By: alcierra <alcierra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 16:58:36 by alcierra          #+#    #+#             */
-/*   Updated: 2021/12/14 17:29:23 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/12/14 19:04:44 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -226,6 +226,14 @@ void	function_tests()
 
 void function_test_printf()
 {
+	test_header("f(\"%x\", -16)");
+	test_expected_int(printf("%x\n", -16));
+	test_result_int(ft_printf("%x\n", -16));
+
+	#ifdef READ_FILEDESCRIPTOR
+	read(READ_FILEDESCRIPTOR, "", 1);
+	#endif
+	
 	test_header("f(\"%p\", (void *) 16)");
 	test_expected_int(printf("%p\n", (void *) 16));
 	test_result_int(ft_printf("%p\n", (void *) 16));
