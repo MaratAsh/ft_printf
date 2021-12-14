@@ -6,13 +6,13 @@
 /*   By: alcierra <alcierra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 15:26:24 by alcierra          #+#    #+#             */
-/*   Updated: 2021/12/08 15:56:20 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/12/14 18:03:38 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf_dev.h"
 
-int	ft_putptr_lower_fd(unsigned long long num, int fd)
+int	ft_putptr_lower_fd(unsigned long num, int fd)
 {
 	int	res;
 
@@ -20,7 +20,7 @@ int	ft_putptr_lower_fd(unsigned long long num, int fd)
 	return (res + ft_putnbr_base_usign_fd(num, "0123456789abcdef", fd));
 }
 
-int	ft_putptr_upper_fd(unsigned long long num, int fd)
+int	ft_putptr_upper_fd(unsigned long num, int fd)
 {
 	int	res;
 
@@ -28,12 +28,12 @@ int	ft_putptr_upper_fd(unsigned long long num, int fd)
 	return (res + ft_putnbr_base_usign_fd(num, "0123456789ABCDEF", fd));
 }
 
-int	ft_putptr_upper(unsigned long long num, int fd)
+int	ft_putptr_upper(unsigned long num, int fd)
 {
 	return (ft_putptr_upper_fd(num, fd));
 }
 
-int	ft_putptr_lower(unsigned long long num, int fd)
+int	ft_putptr_lower(unsigned long num, int fd)
 {
 	return (ft_putptr_lower_fd(num, fd));
 }

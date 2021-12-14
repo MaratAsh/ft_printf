@@ -6,7 +6,7 @@
 #    By: alcierra <alcierra@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/13 17:45:26 by alcierra          #+#    #+#              #
-#    Updated: 2021/12/08 15:59:12 by alcierra         ###   ########.fr        #
+#    Updated: 2021/12/14 18:04:17 by alcierra         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,3 +63,6 @@ run_t: main_t
 push_my: fclean
 		git push my master
 		git push my test
+
+norminette:
+		norminette -R CheckForbiddenSourceHeader ${SRCS}

@@ -6,13 +6,13 @@
 /*   By: alcierra <alcierra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 16:45:26 by alcierra          #+#    #+#             */
-/*   Updated: 2021/12/08 14:50:53 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/12/14 15:44:01 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf_dev.h"
 
-int	ft_putnbr_neg_fd(long long num, int fd)
+int	ft_putnbr_neg_fd(long num, int fd)
 {
 	int	c;
 	int	i;
@@ -30,7 +30,7 @@ int	ft_putnbr_neg_fd(long long num, int fd)
 	return (i + 1);
 }
 
-int	ft_putnbr_fd(long long num, int fd)
+int	ft_putnbr_fd(long num, int fd)
 {
 	int	c;
 	int	res;
@@ -52,7 +52,7 @@ int	ft_putnbr_fd(long long num, int fd)
 	return (0);
 }
 
-int	ft_putnbr_usign_fd(unsigned long long num, int fd)
+int	ft_putnbr_usign_fd(unsigned long num, int fd)
 {
 	int	c;
 	int	res;
@@ -68,7 +68,7 @@ int	ft_putnbr_usign_fd(unsigned long long num, int fd)
 	return (1);
 }
 
-int	ft_putnbr(long long num)
+int	ft_putnbr(long num)
 {
 	return (ft_putnbr_fd(num, 1));
 }

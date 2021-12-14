@@ -6,14 +6,14 @@
 /*   By: alcierra <alcierra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 15:08:00 by alcierra          #+#    #+#             */
-/*   Updated: 2021/12/04 17:30:39 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/12/14 15:53:44 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "ft_printf_dev.h"
 
-int	ft_get_base_digits(unsigned long long num, int base_len)
+int	ft_get_base_digits(unsigned long num, int base_len)
 {
 	int	count;
 
@@ -26,7 +26,7 @@ int	ft_get_base_digits(unsigned long long num, int base_len)
 	return (count);
 }
 
-char	*ft_dec_to_another(unsigned long long num, char *base)
+char	*ft_dec_to_another(unsigned long num, char *base)
 {
 	int		base_len;
 	int		num_digit;
