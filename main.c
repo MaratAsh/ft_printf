@@ -6,7 +6,7 @@
 /*   By: alcierra <alcierra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 16:58:36 by alcierra          #+#    #+#             */
-/*   Updated: 2021/12/08 16:03:40 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/12/14 17:29:23 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <string.h>
 #include "ft_printf_dev.h"
 #include "ft_printf.h"
+#include <limits.h>
 
 void	test_header(char *str)
 {
@@ -70,6 +71,19 @@ void	test_result_int(int num)
 
 void	function_tests()
 {
+	test_header("ft_putnbr_base_usign_fd(-5445554, \"0123456789\", 1)");
+	printf("%lu", 18446744073704106062UL);
+	test_expected_int(
+		20
+	);
+	test_result_int(
+		ft_putnbr_base_usign_fd((unsigned long) 18446744073704106062UL, "0123456789", 1)
+	);
+
+	#ifdef READ_FILEDESCRIPTOR
+	read(READ_FILEDESCRIPTOR, "", 1);
+	#endif
+	
 	test_header("ft_putnbr_base_fd(12345, \"0123456789\", 1)");
 	printf("%d\n", 12345);
 	test_expected_int(
@@ -212,6 +226,54 @@ void	function_tests()
 
 void function_test_printf()
 {
+	test_header("f(\"%p\", (void *) 16)");
+	test_expected_int(printf("%p\n", (void *) 16));
+	test_result_int(ft_printf("%p\n", (void *) 16));
+
+	#ifdef READ_FILEDESCRIPTOR
+	read(READ_FILEDESCRIPTOR, "", 1);
+	#endif
+	
+	test_header("f(\"%p\", (void *) 17)");
+	test_expected_int(printf("%p\n", (void *) 17));
+	test_result_int(ft_printf("%p\n", (void *) 17));
+
+	#ifdef READ_FILEDESCRIPTOR
+	read(READ_FILEDESCRIPTOR, "", 1);
+	#endif
+	
+	test_header("f(\"%p\", (void *) -1)");
+	test_expected_int(printf("%p\n", (void *) -1));
+	test_result_int(ft_printf("%p\n", (void *) -1));
+
+	#ifdef READ_FILEDESCRIPTOR
+	read(READ_FILEDESCRIPTOR, "", 1);
+	#endif
+
+	test_header("f(\"%p\", (void *) LONG_MIN, (void *) LONG_MAX)");
+	test_expected_int(printf("%p %p\n", (void *) LONG_MIN, (void *) LONG_MAX));
+	test_result_int(ft_printf("%p %p\n", (void *) LONG_MIN, (void *) LONG_MAX));
+
+	#ifdef READ_FILEDESCRIPTOR
+	read(READ_FILEDESCRIPTOR, "", 1);
+	#endif
+
+	test_header("f(\"%p\", (void *) ULONG_MAX, (void *) -ULONG_MAX)");
+	test_expected_int(printf("%p %p\n", (void *) ULONG_MAX, (void *) -ULONG_MAX));
+	test_result_int(ft_printf("%p %p\n", (void *) ULONG_MAX, (void *) -ULONG_MAX));
+
+	#ifdef READ_FILEDESCRIPTOR
+	read(READ_FILEDESCRIPTOR, "", 1);
+	#endif
+
+	test_header("f(\"%p\", (void *) INT_MIN, (void *) INT_MAX)");
+	test_expected_int(printf("%p %p\n", (void *) INT_MIN, (void *) INT_MAX));
+	test_result_int(ft_printf("%p %p\n", (void *) INT_MIN, (void *) INT_MAX));
+
+	#ifdef READ_FILEDESCRIPTOR
+	read(READ_FILEDESCRIPTOR, "", 1);
+	#endif
+	
 	test_header("f(\"%s\", \"012\")");
 	test_expected_int(printf("%s\n", "012"));
 	test_result_int(ft_printf("%s\n", "012"));
