@@ -6,13 +6,13 @@
 /*   By: alcierra <alcierra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 15:12:02 by alcierra          #+#    #+#             */
-/*   Updated: 2021/12/04 15:14:41 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/12/15 15:15:31 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char*str)
+unsigned long long	ft_strlen(char*str)
 {
-	int	i;
+	unsigned long long	i;
 
 	i = 0;
 	while (str[i])
