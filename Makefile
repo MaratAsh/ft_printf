@@ -6,7 +6,7 @@
 #    By: alcierra <alcierra@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/13 17:45:26 by alcierra          #+#    #+#              #
-#    Updated: 2021/12/14 18:04:17 by alcierra         ###   ########.fr        #
+#    Updated: 2021/12/15 16:17:49 by alcierra         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,10 +18,7 @@ SRCS	=	ft_printf.c				ft_putchar.c			ft_putstr.c			\
 			ft_number_operations.c	ft_number_base_operations.c					\
 			ft_putptr.c				ft_putnbr_base.c
 
-B_SRCS	=	ft_lstmap_bonus.c
-
 OBJS	=	${SRCS:.c=.o}
-B_OBJS	=	${B_SRCS:.c=.o}
 FLAGS	=	-Wall -Wextra -Werror
 
 all: $(NAME)
@@ -42,27 +39,4 @@ fclean: clean
 
 re: fclean all
 
-bonus:
-		@make OBJS="$(B_OBJS)" all
-
-.PHONY: all clean fclean re	bonus
-
-main: all main.o
-		gcc ${FLAGS} main.o ${OBJS} -I. -o mandatory
-
-main_t: all
-		gcc ${FLAGS} -D READ_FILEDESCRIPTOR=0 -c main.c -o main.o
-		gcc ${FLAGS} main.o ${OBJS} -I. -o mandatory
-
-run: main
-		./mandatory
-
-run_t: main_t
-		./mandatory
-
-push_my: fclean
-		git push my master
-		git push my test
-
-norminette:
-		norminette -R CheckForbiddenSourceHeader ${SRCS}
+.PHONY: all clean fclean re
