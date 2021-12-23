@@ -6,7 +6,7 @@
 /*   By: alcierra <alcierra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 16:54:08 by alcierra          #+#    #+#             */
-/*   Updated: 2021/12/15 15:19:32 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/12/23 17:24:42 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-void				ft_putchar(int c, int *ptr_counter);
+int					ft_putchar(int c);
 unsigned long long	ft_strlen(char *str);
 int					ft_putstr(char *str);
 

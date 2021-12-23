@@ -6,13 +6,13 @@
 /*   By: alcierra <alcierra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 16:41:54 by alcierra          #+#    #+#             */
-/*   Updated: 2021/11/13 20:31:43 by alcierra         ###   ########.fr       */
+/*   Updated: 2021/12/23 17:25:18 by alcierra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(int c, int *ptr_counter)
+int	ft_putchar(int c)
 {
-	*ptr_counter += write(1, &c, 1);
+	return (write(1, &c, 1));
 }
